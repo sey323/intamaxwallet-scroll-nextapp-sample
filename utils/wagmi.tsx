@@ -15,7 +15,8 @@ const wallets = [
     },
     metadata: {
       name: "IntmaxWallet Scroll Connect Sample App",
-      description: "Rainbow-Kit Demo",
+      description:
+        "This is a sample of connecting to the scroll testnet using intmax Wallet.",
     },
   }),
 ];
