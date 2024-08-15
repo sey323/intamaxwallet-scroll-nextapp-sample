@@ -1,10 +1,10 @@
 import "@/app/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
-import { Providers } from "./providers";
+import { Providers } from "@/utils/providers";
 
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body>
         <Providers>{children}</Providers>
       </body>
