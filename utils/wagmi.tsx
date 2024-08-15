@@ -1,11 +1,47 @@
-import { getDefaultConfig } from "@rainbow-me/rainbowkit";
-import { arbitrum, base, mainnet, optimism, polygon } from "wagmi/chains";
+import { connectorsForWallets } from "@rainbow-me/rainbowkit";
 import { ScrollSepoliaTestnet } from "./chains/ScrollSepoliaTestnet";
 import { SepoliaTestnet } from "./chains/SepoliaTestnet";
+import { intmaxwalletsdk } from "intmax-walletsdk/rainbowkit";
+import { createConfig, http } from "wagmi";
+import { walletConnectWallet } from "@rainbow-me/rainbowkit/wallets";
 
-export const config = getDefaultConfig({
-  appName: "RainbowKit demo",
-  projectId: "TEST",
-  chains: [SepoliaTestnet, ScrollSepoliaTestnet],
-  ssr: true,
+// Intmax Walletの設定
+const wallets = [
+  intmaxwalletsdk({
+    wallet: {
+      url: "https://wallet.intmax.io/",
+      name: "INTMAX Wallet",
+      iconUrl: "https://wallet.intmax.io/favicon.ico",
+    },
+    metadata: {
+      name: "IntmaxWallet Scroll Connect Sample App",
+      description: "Rainbow-Kit Demo",
+    },
+  }),
+];
+
+// 接続可能なウォレットの設定
+const connectors = connectorsForWallets(
+  [
+    {
+      groupName: "Recommended Wallet",
+      wallets,
+    },
+    {
+      groupName: "Popular Wallets",
+      wallets: [walletConnectWallet],
+    },
+  ],
+  { projectId: "N/A", appName: "Sample Wallet" }
+);
+
+export const config = createConfig({
+  chains: [ScrollSepoliaTestnet, SepoliaTestnet],
+  transports: {
+    [ScrollSepoliaTestnet.id]: http(
+      ScrollSepoliaTestnet.blockExplorers.default.url
+    ),
+    [SepoliaTestnet.id]: http(SepoliaTestnet.blockExplorers.default.url),
+  },
+  connectors,
 });

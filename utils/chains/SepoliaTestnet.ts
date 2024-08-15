@@ -1,6 +1,6 @@
-import { Chain } from "@rainbow-me/rainbowkit";
+import { defineChain } from "viem";
 
-export const SepoliaTestnet = {
+export const SepoliaTestnet = defineChain({
   id: 11155111,
   name: "Sepolia Testnet",
   iconBackground: "#fff",
@@ -11,4 +11,4 @@ export const SepoliaTestnet = {
   blockExplorers: {
     default: { name: "EtherScan", url: "https://sepolia.etherscan.io" },
   },
-} as const satisfies Chain;
+});

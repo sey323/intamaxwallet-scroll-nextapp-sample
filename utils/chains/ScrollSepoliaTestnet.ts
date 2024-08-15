@@ -1,6 +1,6 @@
-import { Chain } from "@rainbow-me/rainbowkit";
+import { defineChain } from "viem";
 
-export const ScrollSepoliaTestnet = {
+export const ScrollSepoliaTestnet = defineChain({
   id: 534351,
   name: "Scroll Sepolia Testnet",
   iconBackground: "#fff",
@@ -11,4 +11,4 @@ export const ScrollSepoliaTestnet = {
   blockExplorers: {
     default: { name: "Scrollscan", url: "https://sepolia.scrollscan.com" },
   },
-} as const satisfies Chain;
+});
