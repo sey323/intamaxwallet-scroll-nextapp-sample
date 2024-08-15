@@ -11,6 +11,10 @@ Intmax Wallet SDK を利用し Scroll のテストネットに接続するサン
 - Intmax Wallet SDK を利用して Scroll のテストネットに接続
 - Metamask、WalletConnect、で Scroll のテストネットに接続
 
+本リポジトリの解説記事は以下を参照。
+
+- [RainbowKit を利用し INTMAX Wallet で Dapps に接続する - Qiita](https://qiita.com/sey323/items/e0771797db17be2bfc3b)
+
 ## Quick Start
 
 ローカルで起動する場合、以下のコマンドを実行して下さい
