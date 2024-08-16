@@ -38,10 +38,9 @@ const connectors = connectorsForWallets(
 export const config = createConfig({
   chains: [ScrollSepoliaTestnet, SepoliaTestnet],
   transports: {
-    [ScrollSepoliaTestnet.id]: http(
-      ScrollSepoliaTestnet.blockExplorers.default.url
-    ),
-    [SepoliaTestnet.id]: http(SepoliaTestnet.blockExplorers.default.url),
+    [ScrollSepoliaTestnet.id]: http(),
+    [SepoliaTestnet.id]: http(),
   },
   connectors,
+  ssr: true,
 });
