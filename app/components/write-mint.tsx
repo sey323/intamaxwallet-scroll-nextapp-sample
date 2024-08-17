@@ -48,6 +48,7 @@ export function MintNFT({ address }: { address: `0x${string}` }) {
                 <input
                   type="number"
                   id="amount"
+                  name="amount"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="1"
                   required
@@ -64,6 +65,7 @@ export function MintNFT({ address }: { address: `0x${string}` }) {
                 <input
                   type="text"
                   id="recipient"
+                  name="recipient"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="0x7FF84a54d3d7070391Dd9808696Fc547a910af91"
                   required
