@@ -3,8 +3,6 @@ import { ScrollSepoliaTestnet } from "./chains/ScrollSepoliaTestnet";
 import { SepoliaTestnet } from "./chains/SepoliaTestnet";
 import { intmaxwalletsdk } from "intmax-walletsdk/rainbowkit";
 import { createConfig, http } from "wagmi";
-import { walletConnectWallet } from "@rainbow-me/rainbowkit/wallets";
-import { polygon } from "viem/chains";
 
 // Intmax Walletの設定
 const intmaxWallet = intmaxwalletsdk({
@@ -26,10 +24,6 @@ const connectors = connectorsForWallets(
     {
       groupName: "Recommended Wallet",
       wallets: [intmaxWallet],
-    },
-    {
-      groupName: "Popular Wallets",
-      wallets: [walletConnectWallet],
     },
   ],
   { projectId: "N/A", appName: "Sample Wallet" }
