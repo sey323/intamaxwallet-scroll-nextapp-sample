@@ -31,5 +31,11 @@ bun dev
 
 ## コントラクト
 
+デフォルトで設定されている NFT のコントラクトアドレスは以下の通り。Scroll のテストネットでデプロイされています。
+
 - `0x3db5bb7de1e85fabef286cc03c8a46787d60d98c`
 - [検証用のコントラクト](https://sepolia.scrollscan.com/address/0x3db5bb7de1e85fabef286cc03c8a46787d60d98c)
+
+上記のコントラクトのデプロイ手順などの詳細は以下の記事を参照。
+
+- [Solidity で NFT を作成し Foundry を利用してローカルのテストネットにデプロイする - Qiita](https://qiita.com/sey323/items/6701b34d66a2e8c5ea17)
