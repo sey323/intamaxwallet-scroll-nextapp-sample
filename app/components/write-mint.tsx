@@ -10,13 +10,13 @@ export function MintNFT({ address }: { address: `0x${string}` }) {
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
-    const amount = formData.get("amount") as string;
-    const recipient = formData.get("recipient") as `0x${string}`;
+    const sentence = formData.get("sentence") as string;
+    const ownerAddress = formData.get("ownerAddress") as `0x${string}`;
     writeContract({
       address: address,
       abi: WagmiSample,
-      functionName: "mint",
-      args: [recipient, BigInt(amount)],
+      functionName: "mintNft",
+      args: [ownerAddress, sentence],
     });
   }
 
@@ -34,40 +34,40 @@ export function MintNFT({ address }: { address: `0x${string}` }) {
       {address ? (
         <>
           <h1 className="flex justify-center font-semibold text-gray-900 dark:text-white">
-            ERC20トークンを発行します
+            NFTを発行する
           </h1>
           <form onSubmit={submit}>
             <div className="grid gap-6 mb-6">
               <div>
                 <label
-                  htmlFor="amount"
+                  htmlFor="ownerAddress"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  発行量
+                  所有者のアドレス
                 </label>
                 <input
-                  type="number"
-                  id="amount"
-                  name="amount"
+                  type="text"
+                  id="ownerAddress"
+                  name="ownerAddress"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="1"
+                  placeholder="0x7FF84a54d3d7070391Dd9808696Fc547a910af91"
                   required
                 />
               </div>
 
               <div>
                 <label
-                  htmlFor="recipient"
+                  htmlFor="sentence"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  発行先のウォレットアドレス
+                  NFTに刻む文章
                 </label>
                 <input
                   type="text"
-                  id="recipient"
-                  name="recipient"
+                  id="sentence"
+                  name="sentence"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="0x7FF84a54d3d7070391Dd9808696Fc547a910af91"
+                  placeholder="nftに刻む"
                   required
                 />
               </div>

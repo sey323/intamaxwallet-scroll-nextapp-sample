@@ -28,3 +28,8 @@ pnpm dev
 # or
 bun dev
 ```
+
+## コントラクト
+
+- `0x3db5bb7de1e85fabef286cc03c8a46787d60d98c`
+- [検証用のコントラクト](https://sepolia.scrollscan.com/address/0x3db5bb7de1e85fabef286cc03c8a46787d60d98c)
