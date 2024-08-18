@@ -1,6 +1,5 @@
 import { connectorsForWallets } from "@rainbow-me/rainbowkit";
 import { ScrollSepoliaTestnet } from "./chains/ScrollSepoliaTestnet";
-import { SepoliaTestnet } from "./chains/SepoliaTestnet";
 import { intmaxwalletsdk } from "intmax-walletsdk/rainbowkit";
 import { createConfig, http } from "wagmi";
 
@@ -30,10 +29,9 @@ const connectors = connectorsForWallets(
 );
 
 export const config = createConfig({
-  chains: [ScrollSepoliaTestnet, SepoliaTestnet],
+  chains: [ScrollSepoliaTestnet],
   transports: {
     [ScrollSepoliaTestnet.id]: http(),
-    [SepoliaTestnet.id]: http(),
   },
   connectors,
   ssr: true,
