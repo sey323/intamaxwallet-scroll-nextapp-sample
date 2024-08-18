@@ -43,7 +43,7 @@ export function MintNFT({ address }: { address: `0x${string}` }) {
                   htmlFor="ownerAddress"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  所有者のアドレス
+                  NFTの所有者のアドレス
                 </label>
                 <input
                   type="text"
@@ -60,14 +60,14 @@ export function MintNFT({ address }: { address: `0x${string}` }) {
                   htmlFor="sentence"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  NFTに刻む文章
+                  NFTに記録する文字列
                 </label>
                 <input
                   type="text"
                   id="sentence"
                   name="sentence"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="nftに刻む"
+                  placeholder="NFTに記録する文字列"
                   required
                 />
               </div>
