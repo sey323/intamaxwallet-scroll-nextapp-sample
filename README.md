@@ -8,8 +8,8 @@ Intmax Wallet SDK を利用し Scroll のテストネットに接続するサン
 
 以下のことができます.
 
-- Intmax Wallet SDK を利用して Scroll のテストネットに接続
-- Metamask、WalletConnect、で Scroll のテストネットに接続
+- Intmax Wallet SDK を利用して Cabinet 経由で Scroll のテストネットに接続
+- Scroll テストネット上のサンプルのコントラクトを実行
 
 本リポジトリの解説記事は以下を参照。
 
@@ -17,7 +17,13 @@ Intmax Wallet SDK を利用し Scroll のテストネットに接続するサン
 
 ## Quick Start
 
-ローカルで起動する場合、以下のコマンドを実行して下さい
+Cabinet の認証キーを作成し、`.env.local` ファイルを作成する。
+
+```bash
+NEXT_PUBLIC_CABINET_SCROLL_SEPORIA_RPC_JSON_API_KEY=YOUR_API_KEY
+```
+
+ローカルで起動する場合、以下のコマンドを実行する
 
 ```bash
 npm run dev
