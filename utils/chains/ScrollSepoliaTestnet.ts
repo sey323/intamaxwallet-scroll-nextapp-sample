@@ -6,7 +6,9 @@ export const ScrollSepoliaTestnet = defineChain({
   iconBackground: "#fff",
   nativeCurrency: { name: "Ethereum", symbol: "ETH", decimals: 18 },
   rpcUrls: {
-    default: { http: ["https://sepolia-rpc.scroll.io/"] },
+    default: {
+      http: [process.env.NEXT_PUBLIC_CABINET_SCROLL_SEPORIA_RPC_JSON_API_KEY!],
+    },
   },
   blockExplorers: {
     default: { name: "Scrollscan", url: "https://sepolia.scrollscan.com" },
